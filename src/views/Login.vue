@@ -51,7 +51,6 @@ export default {
         let email= JSON.parse(result).email;
         let password = JSON.parse(result).password;
 
-        console.log(email,password)
         if(email === this.email && password === this.password){
             this.$router.push({name: 'DashBoard'})
         }

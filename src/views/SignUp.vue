@@ -50,19 +50,14 @@ export default {
           name:this.name
         }
         localStorage.setItem("user-info",JSON.stringify(result));
-        console.log(result)
+       
         this.$router.push({name:'DashBoard'})
       },
       togglePassword(){
             this.showPassword = !this.showPassword;
-        }
+      },
     },
-    mounted(){
-      let user = localStorage.getItem('user-info');
-      if(user){
-        this.$router.push({name:'DashBoard'})
-      }
-    }
+    
 }
 </script>
 

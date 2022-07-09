@@ -39,31 +39,31 @@ export default {
             showPassword: true
         }
     },
-    methods:{
-        async login(){
-            let result = await axios.get(
-                `http://localhost:3000/user?email=${this.email}&password=${this.password}`
-            )
-            if(result.status == 200 && result.data.length>0){
-                localStorage.setItem('user-info',JSON.stringify(result.data[0]))
-                this.$router.push({name: 'DashBoard'})
-            }
-            else{
-                this.showError = true;
-                setTimeout(() => this.showError = false, 5000)
-            }
-            console.log(result)
-        },
-        togglePassword(){
-            this.showPassword = !this.showPassword;
-        }
-    },
     mounted(){
       let user = localStorage.getItem('user-info');
-      if(user){
-        this.$router.push({name:'DashBoard'})
+      if(!user){
+        this.$router.push({name:'SignUp'})
       }
-    }
+    },
+    methods:{
+      login(){
+        let result = localStorage.getItem('user-info');
+        let email= JSON.parse(result).email;
+        let password = JSON.parse(result).password;
+
+        console.log(email,password)
+        if(email === this.email && password === this.password){
+            this.$router.push({name: 'DashBoard'})
+        }
+        else{
+            this.showError = true;
+            setTimeout(() => this.showError = false, 5000)
+        }
+      },
+      togglePassword(){
+        this.showPassword = !this.showPassword;
+      }
+    },
 }
 </script>
 

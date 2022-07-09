@@ -43,17 +43,15 @@ export default {
       }
     },
     methods:{
-      async signUp(){
-        let result = await axios.post("http://localhost:3000/user",{
+      signUp(){
+        let result = {
           email:this.email,
           password:this.password,
           name:this.name
-        });
-        console.log(result)
-        if(result.status==201){
-          localStorage.setItem("user-info",JSON.stringify(result.data))
-          this.$router.push({name:'DashBoard'})
         }
+        localStorage.setItem("user-info",JSON.stringify(result));
+        console.log(result)
+        this.$router.push({name:'DashBoard'})
       },
       togglePassword(){
             this.showPassword = !this.showPassword;

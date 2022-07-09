@@ -1,7 +1,7 @@
 <template>
   <div class="loginpage">
         <transition name="errorMsg" mode="out-in">
-        <p v-if="showError" class="errorMsg">Please provide a Email or Password!</p>
+        <p v-if="showError" class="errorMsg">Please provide a Valid Email or Password!</p>
       </transition>
 
       <div class="w-10/12">

@@ -9,7 +9,7 @@ import Add from '@/views/Add.vue'
 const routes = [
   {
     name:'DashBoard',
-    path:'/',
+    path:'/dashboard',
     component:DashBoard
   },
   {
@@ -19,7 +19,7 @@ const routes = [
   },
   {
     name:'Login',
-    path:'/login',
+    path:'/',
     component:Login
   },
   {

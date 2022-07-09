@@ -4,6 +4,7 @@
         <h1 class="text-2xl font-bold">
             Welcome back, <span class="text-rose-600 capitalize">{{name}}</span>
         </h1>
+        <div>
         <div class="container1">
             <p class="mx-5 mb-4">My Accounts</p>
             <hr>
@@ -40,17 +41,20 @@
                 <p class="bg-white text-rose-600 w-fit p-3 m-3 rounded-lg font-semibold">Fund Account</p>
             </div>
         </div>
+
         <div class="container">
             <img src="@/assets/save.png" alt="">
             <p class="container-title">Start saving, earn up to <span class="text-rose-600">8.75%</span> interest</p>
             <p class="container-text">Create goals to meet your target and earn interest while doing so.</p>
             <a class="container-link" href="#">Discover More</a>
         </div>
+
         <div class="container">
             <img src="@/assets/createacct.png" alt="">
             <p class="container-title">Create a Domiciliary Account Today</p>
             <p class="container-text">Open ALAT FX account to send and receive foreign currency with ease</p>
             <a class="container-link" href="#">Create Account</a>
+        </div>
         </div>
     </main>
 </template>
@@ -58,7 +62,7 @@
 <script>
 import Header from '@/components/Header.vue'
 export default {
-    name:'Home',
+    name:'DashBoard',
     components:{
         Header
     },

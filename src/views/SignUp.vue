@@ -1,0 +1,73 @@
+<template>
+  <div class="loginpage">
+    <div class="w-10/12">
+      <h1 class="signUp-text">Sign Up Here!</h1>
+      <div class="borderb"></div>
+
+    <form @submit.prevent="signUp">
+        <input type="text" v-model="name" placeholder="Enter Name" class="input mb-7" required>
+        <input type="email" v-model="email" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="input mb-7" required>
+        
+        <p class="ml-auto text-rose-600 text-sm w-fit"><a href="#">Forgot Password?</a></p>
+        <div class="passworddiv">
+            <input :type="showPassword ? 'password' : 'text'" v-model="password" placeholder="Enter Password" 
+            minlength="6"  class="input" required>
+            <div class="material-icons eye" v-if="showPassword" @click="togglePassword">visibility_off</div>
+            <div class="material-icons eye" v-else @click="togglePassword">visibility</div>
+        </div>
+        <button type="submit" class="signup">Sign Up</button>
+    </form>
+
+    <p class="loginlink">
+      <router-link :to ="{name:'Login'}">Login</router-link>
+    </p>
+    
+    <div class="help-center">
+      <span>help@alat.ng</span>
+      <span>0810 0000 3333</span>
+    </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+export default {
+    name: 'SignUp',
+    data(){
+      return{
+        name:'',
+        email:'',
+        password:'',
+        showPassword: true,
+      }
+    },
+    methods:{
+      async signUp(){
+        let result = await axios.post("http://localhost:3000/user",{
+          email:this.email,
+          password:this.password,
+          name:this.name
+        });
+        console.log(result)
+        if(result.status==201){
+          localStorage.setItem("user-info",JSON.stringify(result.data))
+          this.$router.push({name:'DashBoard'})
+        }
+      },
+      togglePassword(){
+            this.showPassword = !this.showPassword;
+        }
+    },
+    mounted(){
+      let user = localStorage.getItem('user-info');
+      if(user){
+        this.$router.push({name:'DashBoard'})
+      }
+    }
+}
+</script>
+
+<style>
+
+</style>

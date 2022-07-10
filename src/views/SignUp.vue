@@ -1,9 +1,5 @@
 <template>
   <div class="loginpage">
-    <transition name="errorMsg" mode="out-in">
-        <p v-if="showError" class="errorMsg">Username or Email Already Exist!</p>
-      </transition>
-
     <div class="w-10/12">
       <h1 class="signUp-text">Sign Up Here!</h1>
       <div class="borderb"></div>
@@ -49,23 +45,13 @@ export default {
     },
     methods:{
       signUp(){
-        let user = localStorage.getItem('user-info');
-        let email= JSON.parse(user).email;
-        let name = JSON.parse(user).name;
-
-        if(email === this.email || name === this.name){
-            this.showError = true;
-            setTimeout(() => this.showError = false, 5000)
-        }
-        else{
-          let result = {
+        let result = {
           email:this.email,
           password:this.password,
           name:this.name
         }
         localStorage.setItem("user-info",JSON.stringify(result));
         this.$router.push({name:'DashBoard'})
-        }
       },
       togglePassword(){
             this.showPassword = !this.showPassword;

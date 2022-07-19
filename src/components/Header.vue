@@ -6,7 +6,7 @@
         </div>  
         <ul v-show="!mobile" class="navigation">
             <li class="li"><router-link class="link" :to="{name:'DashBoard'}">Home</router-link></li>
-            <li class="li"><router-link class="link" :to="{name:'Add'}">Add</router-link></li>
+            <li class="li"><router-link class="link" :to="{name:'Transfer'}">Add</router-link></li>
             <li class="li"><router-link class="link" :to="{name:'About'}">About</router-link></li>
             <li class="logout uppercase font-medium cursor-pointer ml-4 p-4" @click="logout">Logout</li>
         </ul>
@@ -34,7 +34,7 @@
             </div>
             <div class="dropdown-link">
                 <span class="material-icons">swap_horizontal_circle</span>
-                <router-link class="dp-link" :to="{name:'Add'}">Send Money</router-link>
+                <router-link class="dp-link" :to="{name:'Transfer'}">Send Money</router-link>
             </div>
             <div class="dropdown-link">
                 <span class="material-icons">account_balance</span>

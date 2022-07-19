@@ -163,3 +163,32 @@ div a.router-link-exact-active{
 .container-link{
     @apply bg-rose-700 text-base text-white p-3 rounded-lg mt-3
 }
+
+/* Transfer Section */
+.title{
+    @apply text-xl font-bold
+}
+.subheader{
+    @apply border-b border-gray-300 py-2 mt-4
+}
+.subheader-link{
+    @apply text-xs text-rose-900 p-2 border-b-2 border-transparent
+}
+.subheader a.router-link-exact-active{
+    @apply border-rose-600 text-rose-600
+}
+.divhead{
+    @apply mx-5 mb-4 text-center font-bold
+}
+.label{
+    @apply pb-4 text-sm
+}
+.btdiv{
+    @apply mx-4 mt-5 flex flex-col
+}
+.getDetails{
+    @apply border bg-gray-100 p-2 w-fit self-center 
+}
+.search{
+    @apply border-gray-300 border rounded-full pl-5 w-full h-12 block mx-auto outline-0 placeholder:text-center
+}

@@ -1,8 +1,8 @@
 <template>
     <Header/>
-  <main class="main">
-    <h1>Welcome to About Page</h1>
-  </main>
+    <main class="main">
+      <h1>Welcome to About Page</h1>
+    </main>
 </template>
 
 <script>

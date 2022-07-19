@@ -3,7 +3,7 @@ import DashBoard from '@/views/DashBoard.vue'
 import SignUp from '@/views/SignUp.vue'
 import Login from '@/views/Login.vue'
 import About from '@/views/About.vue'
-import Add from '@/views/Add.vue'
+import Transfer from '@/views/Transfer.vue'
 
 
 const routes = [
@@ -28,9 +28,9 @@ const routes = [
     component:About
   },
   {
-    name:'Add',
-    path:'/add',
-    component:Add
+    name:'Transfer',
+    path:'/transfer',
+    component:Transfer
   },
 ]
 
